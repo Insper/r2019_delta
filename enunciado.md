@@ -52,9 +52,9 @@ Dicas:
 |Resultado| Conceito| 
 |---|---|
 | Não executa | 0 |
-| Dá falso positivo para outros círculos ou outras cores  ou não apresenta contornos | 1.5 |
-| Apresenta o contorno que praticamente cobre os círculos verde | 2.75 |
-| Apresenta um contorno desenhado sobre os círculos verdes da folha | 4.5 | 
+| Seleciona laranjas corretamente e obtém máscara | 1.0 |
+| Conta laranjas | 1.5 |
+| Desenha círculo só sobre as maduras | 2.5 | 
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
@@ -75,9 +75,9 @@ Assuma que a resolućão da webcam é `640 x 480`  e que a imagem abaixo foi obt
 |Resultado| Conceito| 
 |---|---|
 | Não executa | 0 |
-| Consegue calcular o centro do gato e o centro da imagem | 1.5 |
-| Realiza ações no sentido de centralizar, mas não converge ou a rotação não é no sentido ótimo | 2.75 |
-| Gira até convergir para o gato | 4.5 | 
+| Calcula a distância focal | 0.5 |
+| Segmenta a caixa mostrando contoro e calculando altura | 1.5 |
+| Imprime distância interativamente  na webcam | 2.5 | 
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
@@ -85,7 +85,7 @@ Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
 ## Questão 3 - ROS
 
-Faća um programa em ROS que realize as seguintes tarefas:
+Faça um programa em ROS que realize as seguintes tarefas:
 
 * Sorteia um ângulo $\alpha$
 
@@ -94,6 +94,15 @@ Faća um programa em ROS que realize as seguintes tarefas:
 * Faz o robô comećar a andar em frente (em suas coordenadas locais)
 
 * Usa a odometria (tópico `\odom`) para deixar o robô imóvel depois que este andou $1.33m$ em relaćão a sua posićào inicial
+
+|Resultado| Conceito| 
+|---|---|
+| Não executa | 0 |
+| Gira alpha no sentido certo | 1.0 |
+|  Recebe odometria | 1.5 |
+| Para após andar | 2.5 | 
+
+
 
 # Questão 4 - ROS + cv
 
@@ -105,6 +114,11 @@ O que você deve fazer:
 * Leia os dados do *lidar* 
 * Represente o robô na coordenada 256,256 da imagem usando um círculo
 * Adotando a escala $1 pixel = 2 cm$ desenhe todas as leituras válidas do lidar na imagem
+* Traça as retas encontradas usando a transformada de Hough Lines
 
 
-
+|Resultado| Conceito| 
+|---|---|
+| Não executa | 0 |
+| Desenha os pontos corretamente | 1.5 |
+|  Traça a reta | 2.5 | 
