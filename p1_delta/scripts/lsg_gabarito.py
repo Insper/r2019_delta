@@ -28,6 +28,8 @@ def scaneou(dado):
     #print("Intensities")
     #print(np.array(dado.intensities).round(decimals=2))
 
+ 
+
 
 def desenha(cv_image):
     """
@@ -69,6 +71,7 @@ if __name__=="__main__":
 
     while not rospy.is_shutdown():
         # Cria uma imagem 512 x 512
+
         branco_rgb = np.zeros(shape=[512, 512, 3], dtype=np.uint8)
         # Chama funćões de desenho
         draw_lidar(branco_rgb, ranges)
@@ -76,7 +79,7 @@ if __name__=="__main__":
 
         # Imprime a imagem de saida
         cv2.imshow("Saida", branco_rgb)
-        cv2.waitKey(0)
+        cv2.waitKey(40) # TRocamos o 0 por 40 para esperar 40 millisegundos
         rospy.sleep(0.1)
 
 
