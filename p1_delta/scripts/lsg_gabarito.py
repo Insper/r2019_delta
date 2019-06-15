@@ -63,7 +63,7 @@ def draw_hough(cv_image):
     img_gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
     cv2.imshow("gray", img_gray)
     cv2.waitKey(10)
-    # O trecho abaixo é copiado direto da aula 2, parte sobre Hough, sem mudar
+    # O trecho abaixo é copiado direto da aula 2, parte sobre Hough, colocando só ma checagem para None na primeira iteraćão
     lines = cv2.HoughLinesP(img_gray, 10, math.pi/180.0, 100, np.array([]), 45, 5)
     if lines is None:
         print("No lines found")
