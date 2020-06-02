@@ -5,7 +5,7 @@ import rospy
 
 import numpy as np
 
-import cv2
+import cv2  
 
 from geometry_msgs.msg import Twist, Vector3
 from sensor_msgs.msg import LaserScan
