@@ -91,6 +91,7 @@ if __name__=="__main__":
             linear = 1.33 # sympy
             tempo_lin = linear/vlin
             vel = Twist(Vector3(vlin,0,0), Vector3(0,0,0))
+            velocidade_saida.publish(vel)
             rospy.sleep(tempo_lin)
             velocidade_saida.publish(zero)
             rospy.sleep(0.01)
