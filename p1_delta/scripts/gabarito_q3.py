@@ -60,21 +60,7 @@ if __name__=="__main__":
     try:
 
         while not rospy.is_shutdown():
-            # problemas de buffer?
-            velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
-            velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
-            velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
-            # 
-
-            angulo = 2*math.pi*ra      velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
-            velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
-            velocidade_saida.publish(zero)
-            rospy.sleep(0.01)
+            angulo = 2*math.pi*random.random()           
             # ndom.random()
             print("Angulo", angulo, " graus ", math.degrees(angulo))
             w = 2.5
