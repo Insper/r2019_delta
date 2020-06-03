@@ -3,7 +3,7 @@
 
 # Sugerimos rodar com:
 # roslaunch turtlebot3_gazebo  turtlebot3_empty_world.launch 
-
+# Reprodução do código >>  https://youtu.be/ynj2GUyi4nc  <<
 
 from __future__ import print_function, division
 import rospy
