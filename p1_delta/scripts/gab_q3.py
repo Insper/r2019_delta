@@ -19,6 +19,13 @@ from tf import transformations
 import sys
 
 
+def dist(x1,y1, x2,y2):
+    dx = x2 - x1
+    dy = y2 - y1
+    return math.sqrt(dx**2 + dy**2)
+
+
+
 x = None
 y = None
 
@@ -41,6 +48,8 @@ def recebe_odometria(data):
         print("Posicao (x,y)  ({:.2f} , {:.2f}) + angulo {:.2f}".format(x, y,angulos[2]))
     contador = contador + 1
 
+
+
 if __name__=="__main__":
 
     rospy.init_node("exemplo_odom")
@@ -54,7 +63,6 @@ if __name__=="__main__":
 
     # Variaveis da solucao
     import random
-    import math
 
     w = 0.3
 
@@ -75,8 +83,22 @@ if __name__=="__main__":
         pub.publish(zero)
         rospy.sleep(0.5)
 
+        x0 = x
+        y0 = y
+        finished = False
+        vel_trans = Twist(Vector3(0.2,0,0), Vector3(0,0,0))
+
+        while not finished:
+            pub.publish(vel_trans)
+            rospy.sleep(0.05)
+            if dist(x0, y0, x, y) >= 1.33:
+                finished = True
+    
+
+        pub.publish(zero)
 
         # baseado na odometria, parar depois de andar 1.33m
         print("terminou")
-        sys.exit(0)
         rospy.sleep(0.5)
+        sys.exit(0)
+
