@@ -69,6 +69,7 @@ if __name__=="__main__":
     zero = Twist(Vector3(0,0,0), Vector3(0,0,0))
 
     while not rospy.is_shutdown():
+        # Monte de publish do bug do Miranda
         bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
         pub.publish(bug)
         bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
@@ -76,6 +77,7 @@ if __name__=="__main__":
         bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
         pub.publish(bug)
         rospy.sleep(1.0)
+        # Resposta comeca abaixo
 
         # sorteia angulo
 
