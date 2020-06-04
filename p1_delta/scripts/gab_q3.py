@@ -69,6 +69,14 @@ if __name__=="__main__":
     zero = Twist(Vector3(0,0,0), Vector3(0,0,0))
 
     while not rospy.is_shutdown():
+        bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
+        pub.publish(bug)
+        bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
+        pub.publish(bug)
+        bug = Twist(Vector3(0.05,0,0), Vector3(0,0,0))
+        pub.publish(bug)
+        rospy.sleep(1.0)
+
         # sorteia angulo
 
         alfa = random.uniform(0, 2*math.pi)
